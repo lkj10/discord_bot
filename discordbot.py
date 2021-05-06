@@ -16,5 +16,10 @@ async def hello(ctx):
     await ctx.send('Hello, World!')
 
 
+@app.event
+async def on_message(msg):
+    await msg.add_reaction("😁")
+
+
 @app.command()
-app.run('ODM5NzgxMTM1MjMwODI4NTg1.YJOpIQ.PBpnIbvFRviX3GEI0gOxujyQYrA')
+app.run('Token')
