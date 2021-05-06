@@ -16,9 +16,16 @@ async def hello(ctx):
     await ctx.send('Hello, World!')
 
 
-@app.event
-async def on_message(msg):
-    await msg.add_reaction("😁")
+# @app.event
+# async def on_message(msg):
+#    await msg.add_reaction("😁")
+
+@app.command()
+async def 투표(ctx, *args):
+    await ctx.send('투표 시작')
+    for arg in args:
+        code_block = await ctx.send(arg)
+        await code_block.add_reaction("😁")
 
 
 @app.command()
